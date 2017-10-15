@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block title %}Available Courses{% endblock %}
+
+{% block content %}
+<div class="cards">
+    {% for thing in things %}
+    <div class="card">
+           <a href="{% url 'things.views.thing_detail' pk=thing.pk  %}">{{ thing.title }}</a>
+
+        <div class="card-copy">
+
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

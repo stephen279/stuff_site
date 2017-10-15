@@ -1,0 +1,31 @@
+{% extends 'things/layout.html' %}
+
+
+
+
+{% block title %} <!--{{ thing.title }}--> {% endblock %}
+
+
+{% block content %}
+
+<article>
+    <h1>{{thing.title}}
+    </h1>
+    <!--{{thing.description}}-->
+
+    <section>
+        {% for step in thing.step_set.all %}
+        <h4>   <a href="{% url 'step' thing_pk=step.thing_id step_pk=step.id%}">{{ step.title }}</a>
+</h4>
+
+        {% endfor %}
+    </section>
+
+
+
+</article>
+
+
+
+
+{% endblock %}
